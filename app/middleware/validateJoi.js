@@ -22,7 +22,7 @@ module.exports = joiOptions => {
       if (options.convert) {
         ctx.request.body = result.value.body;
         Object.assign(ctx.query, result.value.query);
-        ctx.params = result.value.params;
+        Object.assign(ctx.params, result.value.params);
       }
 
       if (result.error) {
